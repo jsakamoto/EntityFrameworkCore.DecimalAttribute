@@ -25,6 +25,7 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <NoWarn>1701;1702;1705;1591</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>[Decimal(p, s)] attribute and model builder extension for EntityFramework Core.</Description>
   </PropertyGroup>
 
 </Project>
