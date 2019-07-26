@@ -69,9 +69,10 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
                     try { while (r.Read()) dump.Add($"{r["Table"]}|{r["Column"]}|{r["Type"]}|{r["Precision"]}|{r["Scale"]}|{r["Nullable"]}"); }
                     finally { r.Close(); }
                     dump.Is(
-                        "People|Height|decimal|10|1|False",
+                        "People|EyeSight|decimal|10|1|False",
                         "People|Id|int|10|0|False",
-                        "People|Weight|decimal|18|3|False"
+                        "People|Metric_Height_Value|decimal|18|3|False",
+                        "People|Metric_Weight_Value|decimal|18|3|False"
                     );
                 }
             }

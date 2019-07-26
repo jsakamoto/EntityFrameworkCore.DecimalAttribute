@@ -8,9 +8,8 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models
         public int Id { get; set; }
 
         [Decimal(10, 1)]
-        public decimal Height { get; set; }
+        public decimal EyeSight { get; set; }
 
-        [Decimal(18, 3)]
-        public decimal Weight { get; set; }
+        public Metric Metric { get; set; }
     }
 }

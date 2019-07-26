@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Toolbelt.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models
 {
@@ -20,30 +14,21 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            //var person = modelBuilder.Entity<Person>();
-            //person.OwnsOne(p => p.Address, address =>
-            //{
-            //    address.OwnsOne(a => a.Lines,
-            //        lines =>
-            //        {
-            //            lines.Property(l => l.Line1).HasColumnName("Line1");
-            //            lines.Property(l => l.Line2).HasColumnName("Line2");
-            //            lines.Property(l => l.Line3).HasColumnName("Line3");
-            //        });
-            //});
-            //person.OwnsOne(p => p.PhoneNumber);
-            //person.OwnsOne(p => p.FaxNumber);
+            var person = modelBuilder.Entity<Person>();
+            person.OwnsOne(p => p.Metric, metric =>
+            {
+                metric.OwnsOne(m => m.Height);
+                metric.OwnsOne(m => m.Weight);
+            });
 
-            //modelBuilder.Entity<Person>().OwnsOne(typeof(Address), "Address", address =>
+            //modelBuilder.Entity<Person>().OwnsOne(typeof(Metric), "Metric", metric =>
             //{
-            //    address.OwnsOne(typeof(Lines), "Lines", l => l.HasIndex("Line1", "Line2"));
+            //    metric.OwnsOne(typeof(Mesure), "Height", m => m.Property("Value").HasColumnType("decimal(18, 3)"));
+            //    metric.OwnsOne(typeof(Mesure), "Weight", m => m.Property("Value").HasColumnType("decimal(18, 3)"));
             //});
-            //modelBuilder.Entity<Person>().HasIndex("Name").IsUnique();
-            //modelBuilder.Entity<SNSAccount>().HasIndex("Provider");
-            //modelBuilder.Entity<SNSAccount>().HasIndex("Provider", "AccountName").HasName("Ix_Provider_and_Account").IsUnique();
+            //modelBuilder.Entity<Person>().Property("EyeSight").HasColumnType("decimal(10, 1)");
 
             modelBuilder.BuildDecimalColumnTypeFromAnnotations();
         }
-
     }
 }

@@ -10,6 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DecimalAttributeTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Mesure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Metric.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MyDbContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Person.cs" />
   </ItemGroup>
