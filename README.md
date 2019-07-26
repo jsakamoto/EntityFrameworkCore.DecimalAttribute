@@ -64,6 +64,14 @@ After doing that, decimal type columns in the database which created by EF Core,
 
 If you want to use only "DecimalAttribute" class without any dependencies, you can use [Toolbelt.EntityFrameworkCore.DecimalAttribute.Attribute](https://www.nuget.org/packages/Toolbelt.EntityFrameworkCore.DecimalAttribute.Attribute) NuGet package.
 
+## Release Note
+
+- **v.1.0.1**
+  - Fix: Doesn't work with owned types on EFCore v.2.1, v.2.2.
+  - Fix: Doesn't work with nested owned types.
+- **v.1.0.0** - 1st release.
+
+
 ## License
 
 [MIT License](https://github.com/jsakamoto/EntityFrameworkCore.DecimalAttribute/blob/master/LICENSE)

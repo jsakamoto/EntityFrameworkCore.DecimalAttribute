@@ -8,16 +8,19 @@
     <Company>J.Sakamoto</Company>
     <Product>[Decimal(p, s)] attribute and model builder extension for EntityFramework Core.</Product>
     <Copyright>Copyright 2019 J.Sakamoto, MIT License</Copyright>
-    <PackageLicenseUrl>https://github.com/jsakamoto/EntityFrameworkCore.DecimalAttribute/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/jsakamoto/EntityFrameworkCore.DecimalAttribute</PackageProjectUrl>
     <PackageTags>entity-framework-core entityframeworkcore efcore decimal attribute</PackageTags>
-    <PackageReleaseNotes>v.1.0.0
+    <PackageReleaseNotes>v.1.0.1
+- Fix: Doesn't work with owned types on EFCore v.2.1, v.2.2.
+- Fix: Doesn't work with nested owned types.
+v.1.0.0
 - 1st release.
 </PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Toolbelt.EntityFrameworkCore.AnnotationBasedModelBuilder" Version="1.0.0.4" />
+    <PackageReference Include="Toolbelt.EntityFrameworkCore.AnnotationBasedModelBuilder" Version="1.0.2" />
     <PackageReference Include="Toolbelt.EntityFrameworkCore.DecimalAttribute.Attribute" Version="1.0.0" />
   </ItemGroup>
 
@@ -26,6 +29,8 @@
     <NoWarn>1701;1702;1705;1591</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>[Decimal(p, s)] attribute and model builder extension for EntityFramework Core.</Description>
+    <Version>1.0.1</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
