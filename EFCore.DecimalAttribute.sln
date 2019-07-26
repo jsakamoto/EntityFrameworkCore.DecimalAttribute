@@ -5,17 +5,26 @@ VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute", "EFCore.DecimalAttribute\EFCore.DecimalAttribute.csproj", "{B5280DCF-9526-494A-A7B7-340B9E15674C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.DecimalAttribute.Test", "EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.csproj", "{61AC336F-A189-4FDF-9D50-BFDF12ACC092}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "README", "README", "{1938F86B-396F-419E-A0DF-06D40895EDF3}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.DecimalAttribute.Attribute", "EFCore.DecimalAttribute.Attribute\EFCore.DecimalAttribute.Attribute.csproj", "{9625348B-0A38-4ECD-AED5-8DEC38F61E31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Attribute", "EFCore.DecimalAttribute.Attribute\EFCore.DecimalAttribute.Attribute.csproj", "{9625348B-0A38-4ECD-AED5-8DEC38F61E31}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EFCore.DecimalAttribute.Test", "EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.shproj", "{F62F04FB-0CF8-4569-B5CD-BAC3299980AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.DecimalAttribute.Test.EF20", "EFCore.DecimalAttribute.Test.EF20\EFCore.DecimalAttribute.Test.EF20.csproj", "{2279A799-4A0B-47F5-998C-511873511327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.DecimalAttribute.Test.EF21", "EFCore.DecimalAttribute.Test.EF21\EFCore.DecimalAttribute.Test.EF21.csproj", "{554A0475-C947-4F82-9B86-5960DF5C80FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.DecimalAttribute.Test.EF22", "EFCore.DecimalAttribute.Test.EF22\EFCore.DecimalAttribute.Test.EF22.csproj", "{E05863DC-A59F-41EE-9E09-C430221D9059}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.projitems*{f62f04fb-0cf8-4569-b5cd-bac3299980ae}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -25,14 +34,22 @@ Global
 		{B5280DCF-9526-494A-A7B7-340B9E15674C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5280DCF-9526-494A-A7B7-340B9E15674C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5280DCF-9526-494A-A7B7-340B9E15674C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61AC336F-A189-4FDF-9D50-BFDF12ACC092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61AC336F-A189-4FDF-9D50-BFDF12ACC092}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61AC336F-A189-4FDF-9D50-BFDF12ACC092}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61AC336F-A189-4FDF-9D50-BFDF12ACC092}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9625348B-0A38-4ECD-AED5-8DEC38F61E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9625348B-0A38-4ECD-AED5-8DEC38F61E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9625348B-0A38-4ECD-AED5-8DEC38F61E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9625348B-0A38-4ECD-AED5-8DEC38F61E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2279A799-4A0B-47F5-998C-511873511327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2279A799-4A0B-47F5-998C-511873511327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2279A799-4A0B-47F5-998C-511873511327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2279A799-4A0B-47F5-998C-511873511327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554A0475-C947-4F82-9B86-5960DF5C80FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554A0475-C947-4F82-9B86-5960DF5C80FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554A0475-C947-4F82-9B86-5960DF5C80FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554A0475-C947-4F82-9B86-5960DF5C80FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E05863DC-A59F-41EE-9E09-C430221D9059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E05863DC-A59F-41EE-9E09-C430221D9059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E05863DC-A59F-41EE-9E09-C430221D9059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E05863DC-A59F-41EE-9E09-C430221D9059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
