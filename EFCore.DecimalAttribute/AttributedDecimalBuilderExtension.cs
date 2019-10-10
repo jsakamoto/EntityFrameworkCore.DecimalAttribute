@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Toolbelt.ComponentModel.DataAnnotations.Schema;
@@ -14,7 +13,7 @@ namespace Toolbelt.ComponentModel.DataAnnotations
             AnnotationBasedModelBuilder.Build<DecimalAttribute>(modelBuilder, Build);
         }
 
-        private static void Build(EntityTypeBuilder builder1, ReferenceOwnershipBuilder builder2, AnnotatedProperty<DecimalAttribute> builderArg)
+        private static void Build(EntityTypeBuilder builder1, OwnedNavigationBuilder builder2, AnnotatedProperty<DecimalAttribute> builderArg)
         {
             var property = builder1?.Property(builderArg.Name) ?? builder2.Property(builderArg.Name);
             if (property == null) throw new Exception($"Could not determind property \"{builderArg.Name}\" of \"{builder2.OwnedEntityType.Name}\"");

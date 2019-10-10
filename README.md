@@ -17,6 +17,12 @@ public decimal Height { get; set; }
 ```shell
 > dotnet add package Toolbelt.EntityFrameworkCore.DecimalAttribute
 ```
+### Supported Versions
+
+EF Core version | This package version
+----------------|-------------------------
+v.3.0           | v.3.0
+v.2.0, 2.1, 2.2 | v.1.0.x
 
 2. Annotate your model with `[Decimal(precision, scale)]` attribute that lives in `Toolbelt.ComponentModel.DataAnnotations.Schema` namespace.
 
@@ -66,6 +72,7 @@ If you want to use only "DecimalAttribute" class without any dependencies, you c
 
 ## Release Note
 
+- **v.3.0.0** - BREAKING CHANGE: supports EntityFramework Core v.3.0
 - **v.1.0.1**
   - Fix: Doesn't work with owned types on EFCore v.2.1, v.2.2.
   - Fix: Doesn't work with nested owned types.
