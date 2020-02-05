@@ -17,6 +17,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EFCore.DecimalAttribute.Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF30", "EFCore.DecimalAttribute.Test.EF30\EFCore.DecimalAttribute.Test.EF30.csproj", "{090CC4C7-3364-430A-B5E2-F0DD7BCC76C8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF31", "EFCore.DecimalAttribute.Test.EF31\EFCore.DecimalAttribute.Test.EF31.csproj", "{D837FE7C-3D98-47E1-8D79-43FCA4795BA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF311", "EFCore.DecimalAttribute.Test.EF311\EFCore.DecimalAttribute.Test.EF311.csproj", "{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.projitems*{f62f04fb-0cf8-4569-b5cd-bac3299980ae}*SharedItemsImports = 13
@@ -38,6 +42,14 @@ Global
 		{090CC4C7-3364-430A-B5E2-F0DD7BCC76C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{090CC4C7-3364-430A-B5E2-F0DD7BCC76C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{090CC4C7-3364-430A-B5E2-F0DD7BCC76C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D837FE7C-3D98-47E1-8D79-43FCA4795BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D837FE7C-3D98-47E1-8D79-43FCA4795BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D837FE7C-3D98-47E1-8D79-43FCA4795BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D837FE7C-3D98-47E1-8D79-43FCA4795BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
