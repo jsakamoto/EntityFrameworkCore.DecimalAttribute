@@ -29,6 +29,17 @@
     <PackageOutputPath>..\dist\</PackageOutputPath>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageIcon>nupkg-icon.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\.assets\nupkg-icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+
   <Target Name="PreparePackageReleaseNoteFromFile" BeforeTargets="GenerateNuspec">
     <ReadLinesFromFile File="RELEASE-NOTES.txt">
       <Output TaskParameter="Lines" ItemName="ReleaseNoteLines" />
