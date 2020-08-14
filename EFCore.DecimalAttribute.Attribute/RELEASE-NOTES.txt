@@ -1,0 +1,5 @@
+﻿v.5.0.0
+- Change namespace of [Decimal] attribute to avoid conflict with EFCore v5.
+
+v.1.0.0
+- 1st release.

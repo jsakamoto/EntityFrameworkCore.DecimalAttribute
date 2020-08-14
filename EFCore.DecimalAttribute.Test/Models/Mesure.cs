@@ -1,5 +1,5 @@
 ﻿using System;
-using Toolbelt.ComponentModel.DataAnnotations.Schema;
+using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
 
 namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models
 {

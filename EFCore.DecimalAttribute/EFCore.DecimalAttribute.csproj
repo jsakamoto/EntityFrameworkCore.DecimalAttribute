@@ -11,22 +11,12 @@
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/jsakamoto/EntityFrameworkCore.DecimalAttribute</PackageProjectUrl>
     <PackageTags>entity-framework-core entityframeworkcore efcore decimal attribute</PackageTags>
-    <PackageReleaseNotes>v.3.1.0
-- Supports EntityFramework Core v.3.1.0
-- Revert back to .NET Standard 2.0
-v.3.0.0
-- BREAKING CHANGE: supports EntityFramework Core v.3.0
-v.1.0.1
-- Fix: Doesn't work with owned types on EFCore v.2.1, v.2.2.
-- Fix: Doesn't work with nested owned types.
-v.1.0.0
-- 1st release.
-</PackageReleaseNotes>
+    <PackageReleaseNotes>(Please write the package release notes in "RELEASE-NOTES.txt".)</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Toolbelt.EntityFrameworkCore.AnnotationBasedModelBuilder" Version="3.1.0" />
-    <PackageReference Include="Toolbelt.EntityFrameworkCore.DecimalAttribute.Attribute" Version="1.0.0" />
+    <ProjectReference Include="..\EFCore.DecimalAttribute.Attribute\EFCore.DecimalAttribute.Attribute.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -34,9 +24,19 @@ v.1.0.0
     <NoWarn>1701;1702;1705;1591</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>[Decimal(p, s)] attribute and model builder extension for EntityFramework Core.</Description>
-    <Version>3.1.0</Version>
+    <Version>5.0.0</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageOutputPath>..\dist\</PackageOutputPath>
   </PropertyGroup>
+
+  <Target Name="PreparePackageReleaseNoteFromFile" BeforeTargets="GenerateNuspec">
+    <ReadLinesFromFile File="RELEASE-NOTES.txt">
+      <Output TaskParameter="Lines" ItemName="ReleaseNoteLines" />
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <PackageReleaseNotes>@(ReleaseNoteLines, '%0a')</PackageReleaseNotes>
+      <PackageReleaseNotes>$([System.Text.RegularExpressions.Regex]::Match($(PackageReleaseNotes), "^(v\.[\d\.]+.+?)v\.[\d\.]+", System.Text.RegularExpressions.RegexOptions.Singleline).Groups[1].Value)</PackageReleaseNotes>
+    </PropertyGroup>
+  </Target>
 
 </Project>

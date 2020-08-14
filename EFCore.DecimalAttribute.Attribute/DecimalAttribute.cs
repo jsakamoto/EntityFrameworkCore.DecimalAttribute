@@ -1,10 +1,13 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Toolbelt.ComponentModel.DataAnnotations.Schema
 {
     /// <summary>
-    /// Represents an attribute that is placed on a property to indicate that the database column is decimal with specified precision and scale.
+    /// [deprecated] Please use [Decimal] attribute with "using Toolbelt.ComponentModel.DataAnnotations.Schema.Alias;".
     /// </summary>
+    [Obsolete("Please use [Decimal] attribute with \"using Toolbelt.ComponentModel.DataAnnotations.Schema.Alias;\".")]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
     public class DecimalAttribute : Attribute
     {
