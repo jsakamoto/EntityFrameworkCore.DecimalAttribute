@@ -19,16 +19,17 @@ public decimal Height { get; set; }
 ```
 ### Supported Versions
 
-EF Core version | This package version
+EF Core version | This package version  
 ----------------|-------------------------
-v.3.1           | v.3.1
-v.3.0           | v.3.0, v.3.1
-v.2.0, 2.1, 2.2 | v.1.0.x
+v.5.0 (Preview) | v.3.1, **v.5.0 (recommended)**  
+v.3.1           | v.3.1, v.5.0  
+v.3.0           | v.3.0, v.3.1, v.5.0  
+v.2.0, 2.1, 2.2 | v.1.0.x  
 
-2. Annotate your model with `[Decimal(precision, scale)]` attribute that lives in `Toolbelt.ComponentModel.DataAnnotations.Schema` namespace.
+2. Annotate your model with `[Decimal(precision, scale)]` attribute that lives in `Toolbelt.ComponentModel.DataAnnotations.Schema.V5` namespace.
 
 ```csharp
-using Toolbelt.ComponentModel.DataAnnotations.Schema;
+using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
 
 public class Person
 {
@@ -67,21 +68,35 @@ After doing that, decimal type columns in the database which created by EF Core,
 
 ## Appendix
 
+### Upgrade an existing project
+
+To upgrade an existing project that uses ver.3 or before to use ver.5 or later of this package:
+1. Please confirm that the version of this package you use is ver.5 or later.
+
+```
+PM> Update-Package Toolbelt.EntityFrameworkCore.DecimalAttribute
+```
+
+2. Remove `using Toolbelt.ComponentModel.DataAnnotations.Schema;`, and insert `using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;` instead.
+
+```csharp
+...
+// 👇 Remove this line...
+// using Toolbelt.ComponentModel.DataAnnotations.Schema;
+
+// 👇 Insert this line, instead.
+using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
+...
+```
+
 ### If you want to use only "DecimalAttribute" without any dependencies...
 
 If you want to use only "DecimalAttribute" class without any dependencies, you can use [Toolbelt.EntityFrameworkCore.DecimalAttribute.Attribute](https://www.nuget.org/packages/Toolbelt.EntityFrameworkCore.DecimalAttribute.Attribute) NuGet package.
 
-## Release Note
+## Release Notes
 
-- **v.3.1.0**
-    - Supports EntityFramework Core v.3.1.0
-    - Revert back to .NET Standard 2.0
-- **v.3.0.0** - BREAKING CHANGE: supports EntityFramework Core v.3.0
-- **v.1.0.1**
-  - Fix: Doesn't work with owned types on EFCore v.2.1, v.2.2.
-  - Fix: Doesn't work with nested owned types.
-- **v.1.0.0** - 1st release.
-
+- [Toolbelt.EntityFrameworkCore.DecimalAttribute - Release Notes](https://github.com/jsakamoto/EntityFrameworkCore.DecimalAttribute/blob/master/EFCore.DecimalAttribute/RELEASE-NOTES.txt)
+- [Toolbelt.EntityFrameworkCore.DecimalAttribute.Attibute - Release Notes](https://github.com/jsakamoto/EntityFrameworkCore.DecimalAttribute/blob/master/EFCore.DecimalAttribute.Attribute/RELEASE-NOTES.txt)
 
 ## License
 
