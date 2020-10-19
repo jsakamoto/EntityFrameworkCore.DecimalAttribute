@@ -46,6 +46,15 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
             db.Database.OpenConnection();
             db.Database.EnsureCreated();
 
+            // NOTICE: Owned Property in EF Core v3 never be non-nullable.
+            // See also: https://github.com/aspnet/EntityFrameworkCore/issues/16943
+            var nullableOwnedTypes =
+#if ENABLE_NON_NULLABLE_OWNED_TYPES
+                false;
+#else
+                true;
+#endif
+
             try
             {
                 // Validate database column types.
@@ -53,10 +62,8 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
                 dump.Is(
                     "People|EyeSight|decimal|10|1|False",
                     "People|Id|int|10|0|False",
-                    // NOTICE: Owned Property in EF Core v3 never be non-nullable.
-                    // See also: https://github.com/aspnet/EntityFrameworkCore/issues/16943
-                    "People|Metric_Height_Value|decimal|18|3|True",
-                    "People|Metric_Weight_Value|decimal|18|3|True"
+                    $"People|Metric_Height_Value|decimal|18|3|{nullableOwnedTypes}",
+                    $"People|Metric_Weight_Value|decimal|18|3|{nullableOwnedTypes}"
                 );
             }
             finally { db.Database.EnsureDeleted(); }
