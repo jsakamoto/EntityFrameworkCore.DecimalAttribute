@@ -1,4 +1,7 @@
-﻿v.5.0.0
+﻿v.5.0.1
+- Supports EntityFramework Core 6.0
+
+v.5.0.0
 - Change namespace of [Decimal] attribute to avoid conflict with EFCore v5.
 
 v.3.1.0

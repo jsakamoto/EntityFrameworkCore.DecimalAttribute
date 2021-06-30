@@ -21,9 +21,10 @@ public decimal Height { get; set; }
 
 EF Core version | This package version  
 ----------------|-------------------------
-v.5.0 (Preview) | v.3.1, **v.5.0 (recommended)**  
-v.3.1           | v.3.1, v.5.0  
-v.3.0           | v.3.0, v.3.1, v.5.0  
+v.6.0           | **v.5.0.1 (recommended)**, v.5.0, v.3.1  
+v.5.0           | **v.5.0.1 (recommended)**, v.5.0, v.3.1  
+v.3.1           | **v.5.0.1 (recommended)**, v.5.0, v.3.1    
+v.3.0           | **v.5.0.1 (recommended)**, v.5.0, v.3.1, v.3.0  
 v.2.0, 2.1, 2.2 | v.1.0.x  
 
 2. Annotate your model with `[Decimal(precision, scale)]` attribute that lives in `Toolbelt.ComponentModel.DataAnnotations.Schema.V5` namespace.
