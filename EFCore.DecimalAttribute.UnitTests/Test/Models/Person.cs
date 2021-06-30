@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
 
 namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models

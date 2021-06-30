@@ -5,7 +5,7 @@
     <RootNamespace>Toolbelt.ComponentModel.DataAnnotations.Test</RootNamespace>
     <Nullable>enable</Nullable>
     <WarningsAsErrors>nullable</WarningsAsErrors>
-    <DefineConstants>$(DefineConstants);ENABLE_NULLABLE</DefineConstants>
+    <DefineConstants>$(DefineConstants);ENABLE_NON_NULLABLE_OWNED_TYPES</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

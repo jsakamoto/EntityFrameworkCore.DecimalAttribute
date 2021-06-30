@@ -3,7 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Toolbelt.ComponentModel.DataAnnotations.Test</RootNamespace>
-    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <DefineConstants>$(DefineConstants);ENABLE_NON_NULLABLE_OWNED_TYPES</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
