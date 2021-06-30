@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Toolbelt.EntityFrameworkCore.AnnotationBasedModelBuilder" Version="3.1.0" />
+    <PackageReference Include="Toolbelt.EntityFrameworkCore.AnnotationBasedModelBuilder" Version="5.0.1-preview.1.0" />
     <ProjectReference Include="..\EFCore.DecimalAttribute.Attribute\EFCore.DecimalAttribute.Attribute.csproj" />
   </ItemGroup>
 

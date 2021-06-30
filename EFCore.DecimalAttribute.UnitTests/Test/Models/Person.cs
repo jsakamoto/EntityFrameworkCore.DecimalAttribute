@@ -10,6 +10,6 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models
         [Decimal(10, 1)]
         public decimal EyeSight { get; set; }
 
-        public Metric Metric { get; set; }
+        public Metric Metric { get; set; } = new Metric();
     }
 }

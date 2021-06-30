@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Toolbelt.ComponentModel.DataAnnotations.Test</RootNamespace>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <DefineConstants>$(DefineConstants);ENABLE_NULLABLE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

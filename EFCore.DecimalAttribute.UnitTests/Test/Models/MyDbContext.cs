@@ -6,9 +6,11 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models
     {
         public DbSet<Person> People { get; set; }
 
+#nullable disable
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
         }
+#nullable enable
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -51,7 +51,9 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
                 {
                     // Validate database column types.
                     var conn = db.Database.GetDbConnection() as SqlConnection;
+#nullable disable
                     using (var cmd = conn.CreateCommand())
+#nullable enable
                     {
                         cmd.CommandText = @"
                         SELECT [Table] = t.name, [Column] = c.name, [Type] = type.name, [Precision] = c.precision, [Scale] = c.scale, [Nullable] = c.is_nullable
@@ -67,10 +69,15 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
                         dump.Is(
                             "People|EyeSight|decimal|10|1|False",
                             "People|Id|int|10|0|False",
+#if ENABLE_NULLABLE
+                            "People|Metric_Height_Value|decimal|18|3|False",
+                            "People|Metric_Weight_Value|decimal|18|3|False"
+#else
                             // NOTICE: Owned Property in EF Core v3 never be non-nullable.
                             // See also: https://github.com/aspnet/EntityFrameworkCore/issues/16943
                             "People|Metric_Height_Value|decimal|18|3|True",
                             "People|Metric_Weight_Value|decimal|18|3|True"
+#endif
                         );
                     }
                 }

@@ -2,8 +2,8 @@
 {
     public class Metric
     {
-        public Mesure Height { get; set; }
+        public Mesure Height { get; set; } = new Mesure();
 
-        public Mesure Weight { get; set; }
+        public Mesure Weight { get; set; } = new Mesure();
     }
 }
