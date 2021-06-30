@@ -25,9 +25,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Tes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{2D15BF3A-F2B2-4012-A832-D491EE6C5276}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF60", "EFCore.DecimalAttribute.UnitTests\EF60\EFCore.DecimalAttribute.Test.EF60.csproj", "{B5BC165B-C8C2-44A2-B0CF-58BE5E82A1BF}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{090cc4c7-3364-430a-b5e2-f0dd7bcc76c8}*SharedItemsImports = 5
+		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{b5bc165b-c8c2-44a2-b0cf-58be5e82a1bf}*SharedItemsImports = 5
 		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{d837fe7c-3d98-47e1-8d79-43fca4795ba1}*SharedItemsImports = 5
 		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{ddad9d52-9e1c-4a44-b30c-69619ca8dfa7}*SharedItemsImports = 5
 		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{e073bc3d-dac6-4541-950b-82a04843dbd2}*SharedItemsImports = 5
@@ -62,6 +65,10 @@ Global
 		{E073BC3D-DAC6-4541-950B-82A04843DBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E073BC3D-DAC6-4541-950B-82A04843DBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E073BC3D-DAC6-4541-950B-82A04843DBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5BC165B-C8C2-44A2-B0CF-58BE5E82A1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5BC165B-C8C2-44A2-B0CF-58BE5E82A1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5BC165B-C8C2-44A2-B0CF-58BE5E82A1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5BC165B-C8C2-44A2-B0CF-58BE5E82A1BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +79,7 @@ Global
 		{D837FE7C-3D98-47E1-8D79-43FCA4795BA1} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
 		{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
 		{E073BC3D-DAC6-4541-950B-82A04843DBD2} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
+		{B5BC165B-C8C2-44A2-B0CF-58BE5E82A1BF} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E18DD44C-7663-4BD7-9922-7597E7A307DA}
