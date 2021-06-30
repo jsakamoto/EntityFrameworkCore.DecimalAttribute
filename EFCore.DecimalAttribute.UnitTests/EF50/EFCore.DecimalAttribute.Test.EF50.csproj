@@ -23,9 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EFCore.DecimalAttribute\EFCore.DecimalAttribute.csproj" />
+    <ProjectReference Include="..\..\EFCore.DecimalAttribute\EFCore.DecimalAttribute.csproj" />
   </ItemGroup>
 
-  <Import Project="..\EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.projitems" Label="Shared" />
+  <Import Project="..\Test\EFCore.DecimalAttribute.Test.projitems" Label="Shared" />
 
 </Project>

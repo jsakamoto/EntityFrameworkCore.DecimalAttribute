@@ -13,23 +13,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "README", "README", "{1938F8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Attribute", "EFCore.DecimalAttribute.Attribute\EFCore.DecimalAttribute.Attribute.csproj", "{9625348B-0A38-4ECD-AED5-8DEC38F61E31}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EFCore.DecimalAttribute.Test", "EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.shproj", "{F62F04FB-0CF8-4569-B5CD-BAC3299980AE}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EFCore.DecimalAttribute.Test", "EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.shproj", "{F62F04FB-0CF8-4569-B5CD-BAC3299980AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF30", "EFCore.DecimalAttribute.Test.EF30\EFCore.DecimalAttribute.Test.EF30.csproj", "{090CC4C7-3364-430A-B5E2-F0DD7BCC76C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF30", "EFCore.DecimalAttribute.UnitTests\EF30\EFCore.DecimalAttribute.Test.EF30.csproj", "{090CC4C7-3364-430A-B5E2-F0DD7BCC76C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF31", "EFCore.DecimalAttribute.Test.EF31\EFCore.DecimalAttribute.Test.EF31.csproj", "{D837FE7C-3D98-47E1-8D79-43FCA4795BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF31", "EFCore.DecimalAttribute.UnitTests\EF31\EFCore.DecimalAttribute.Test.EF31.csproj", "{D837FE7C-3D98-47E1-8D79-43FCA4795BA1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF311", "EFCore.DecimalAttribute.Test.EF311\EFCore.DecimalAttribute.Test.EF311.csproj", "{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF311", "EFCore.DecimalAttribute.UnitTests\EF311\EFCore.DecimalAttribute.Test.EF311.csproj", "{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF50", "EFCore.DecimalAttribute.Test.EF50\EFCore.DecimalAttribute.Test.EF50.csproj", "{E073BC3D-DAC6-4541-950B-82A04843DBD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.DecimalAttribute.Test.EF50", "EFCore.DecimalAttribute.UnitTests\EF50\EFCore.DecimalAttribute.Test.EF50.csproj", "{E073BC3D-DAC6-4541-950B-82A04843DBD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{2D15BF3A-F2B2-4012-A832-D491EE6C5276}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.projitems*{090cc4c7-3364-430a-b5e2-f0dd7bcc76c8}*SharedItemsImports = 5
-		EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.projitems*{d837fe7c-3d98-47e1-8d79-43fca4795ba1}*SharedItemsImports = 5
-		EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.projitems*{ddad9d52-9e1c-4a44-b30c-69619ca8dfa7}*SharedItemsImports = 5
-		EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.projitems*{e073bc3d-dac6-4541-950b-82a04843dbd2}*SharedItemsImports = 5
-		EFCore.DecimalAttribute.Test\EFCore.DecimalAttribute.Test.projitems*{f62f04fb-0cf8-4569-b5cd-bac3299980ae}*SharedItemsImports = 13
+		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{090cc4c7-3364-430a-b5e2-f0dd7bcc76c8}*SharedItemsImports = 5
+		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{d837fe7c-3d98-47e1-8d79-43fca4795ba1}*SharedItemsImports = 5
+		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{ddad9d52-9e1c-4a44-b30c-69619ca8dfa7}*SharedItemsImports = 5
+		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{e073bc3d-dac6-4541-950b-82a04843dbd2}*SharedItemsImports = 5
+		EFCore.DecimalAttribute.UnitTests\Test\EFCore.DecimalAttribute.Test.projitems*{f62f04fb-0cf8-4569-b5cd-bac3299980ae}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F62F04FB-0CF8-4569-B5CD-BAC3299980AE} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
+		{090CC4C7-3364-430A-B5E2-F0DD7BCC76C8} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
+		{D837FE7C-3D98-47E1-8D79-43FCA4795BA1} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
+		{DDAD9D52-9E1C-4A44-B30C-69619CA8DFA7} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
+		{E073BC3D-DAC6-4541-950B-82A04843DBD2} = {2D15BF3A-F2B2-4012-A832-D491EE6C5276}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E18DD44C-7663-4BD7-9922-7597E7A307DA}
