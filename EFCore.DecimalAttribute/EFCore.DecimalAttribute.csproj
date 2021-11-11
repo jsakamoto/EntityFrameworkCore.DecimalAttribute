@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Toolbelt.EntityFrameworkCore.DecimalAttribute</AssemblyName>
     <RootNamespace>Toolbelt.ComponentModel.DataAnnotations.Schema</RootNamespace>
-    <Version>5.0.1-preview.1.0</Version>
+    <Version>5.0.1</Version>
     <Authors>J.Sakamoto</Authors>
     <Company>J.Sakamoto</Company>
     <Product>[Decimal(p, s)] attribute and model builder extension for EntityFramework Core.</Product>
