@@ -19,8 +19,9 @@ public decimal Height { get; set; }
 ```
 ### Supported Versions
 
-EF Core version | This package version  
+The version of EF Core | Version of this package
 ----------------|-------------------------
+v.7.0           | **v.5.0.1 (recommended)**, v.5.0, v.3.1  
 v.6.0           | **v.5.0.1 (recommended)**, v.5.0, v.3.1  
 v.5.0           | **v.5.0.1 (recommended)**, v.5.0, v.3.1  
 v.3.1           | **v.5.0.1 (recommended)**, v.5.0, v.3.1    
