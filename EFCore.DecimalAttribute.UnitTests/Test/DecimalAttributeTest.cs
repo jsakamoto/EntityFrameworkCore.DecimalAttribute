@@ -45,7 +45,7 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
             return new MyDbContext(option);
         }
 
-        [Fact(DisplayName = "CreateDb with Decimal Column Type on MSSQL LocalDb")]
+        [Fact(DisplayName = "CreateDb with Decimal Column Type on SQL Server")]
         public void CreateDb_with_DecimalAttribute_Test()
         {
             // Create database.
