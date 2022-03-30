@@ -13,9 +13,16 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
     {
         private static MyDbContext CreateMyDbContext()
         {
+            var server = Environment.GetEnvironmentVariable("MSSQL_SERVER");
+            if (string.IsNullOrEmpty(server)) server = "(localdb)\\mssqllocaldb";
+            var user = Environment.GetEnvironmentVariable("MSSQL_USER");
+            var pwd = Environment.GetEnvironmentVariable("MSSQL_PWD");
+            var credential = (!string.IsNullOrEmpty(user) && !string.IsNullOrEmpty(pwd)) ? $"User={user};Password={pwd}" : "Integrated Security=True";
+            var connStrBase = $"Server={server};{credential};TrustServerCertificate=True;";
+
             var dbName = Guid.NewGuid().ToString("N");
 
-            using (var connToMaster = new SqlConnection("Server=(localdb)\\mssqllocaldb;Database=master;Trusted_Connection=True;"))
+            using (var connToMaster = new SqlConnection(connStrBase + "Database=master;"))
             using (var cmd = new SqlCommand($"CREATE DATABASE [{dbName}]", connToMaster))
             {
                 connToMaster.Open();
@@ -29,7 +36,7 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
                     Rules = { new LoggerFilterRule("Debug", DbLoggerCategory.Database.Command.Name, LogLevel.Information, (n, c, l) => true) }
                 });
 
-            var connStr = $"Server=(localdb)\\mssqllocaldb;Database={dbName};Trusted_Connection=True;MultipleActiveResultSets=True;";
+            var connStr = connStrBase + $"Database={dbName};";
             var option = new DbContextOptionsBuilder<MyDbContext>()
                 .UseSqlServer(connStr)
                 .UseLoggerFactory(loggerFactory)

@@ -1,0 +1,42 @@
+name: unit tests
+
+on:
+  push:
+    branches: 
+      - 'trial/**'
+      - master
+
+env:
+  MSSQL_SERVER: localhost,1433
+  MSSQL_USER: sa
+  MSSQL_PWD: Passw0rd
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - uses: actions/checkout@v2
+
+      # Install .NET Core SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: |
+            3.1.x
+            5.0.x
+            6.0.x
+
+      # Install SQL Server
+      - name: Setup SQL Server
+        run: docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$MSSQL_PWD" -p 1433:1433 --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2019-latest
+
+      # Perform unit tests
+      - name: Perform unit tests
+        run: |
+            dotnet test EFCore.DecimalAttribute.UnitTests/EF30 -l "console;verbosity=normal" -v:q --nologo
+            dotnet test EFCore.DecimalAttribute.UnitTests/EF31 -l "console;verbosity=normal" -v:q --nologo
+            dotnet test EFCore.DecimalAttribute.UnitTests/EF311 -l "console;verbosity=normal" -v:q --nologo
+            dotnet test EFCore.DecimalAttribute.UnitTests/EF50 -l "console;verbosity=normal" -v:q --nologo
+            dotnet test EFCore.DecimalAttribute.UnitTests/EF60 -l "console;verbosity=normal" -v:q --nologo
+            dotnet test EFCore.DecimalAttribute.UnitTests/EF70 -l "console;verbosity=normal" -v:q --nologo
