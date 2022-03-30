@@ -1,5 +1,5 @@
 # DecimalAttribute for EntityFramework Core  
-[![NuGet Package](https://img.shields.io/nuget/v/Toolbelt.EntityFrameworkCore.DecimalAttribute.svg)](https://www.nuget.org/packages/Toolbelt.EntityFrameworkCore.DecimalAttribute/)
+[![NuGet Package](https://img.shields.io/nuget/v/Toolbelt.EntityFrameworkCore.DecimalAttribute.svg)](https://www.nuget.org/packages/Toolbelt.EntityFrameworkCore.DecimalAttribute/) [![unit tests](https://github.com/jsakamoto/EntityFrameworkCore.DecimalAttribute/actions/workflows/unit-tests.yml/badge.svg?branch=master&event=push)](https://github.com/jsakamoto/EntityFrameworkCore.DecimalAttribute/actions/workflows/unit-tests.yml)
 
 ## What's this?
 
