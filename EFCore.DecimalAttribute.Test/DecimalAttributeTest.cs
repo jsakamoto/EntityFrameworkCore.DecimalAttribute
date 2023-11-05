@@ -53,14 +53,6 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
             db.Database.OpenConnection();
             db.Database.EnsureCreated();
 
-            // NOTICE: Owned Property in EF Core v3 never be non-nullable.
-            // See also: https://github.com/aspnet/EntityFrameworkCore/issues/16943
-            var nullableOwnedTypes =
-#if ENABLE_NON_NULLABLE_OWNED_TYPES
-                false;
-#else
-                true;
-#endif
             try
             {
                 // Validate database column types.
@@ -68,8 +60,8 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
                 dump.Is(
                     "People|EyeSight|decimal|10|1|False",
                     "People|Id|int|10|0|False",
-                    $"People|Metric_Height_Value|decimal|18|3|{nullableOwnedTypes}",
-                    $"People|Metric_Weight_Value|decimal|18|3|{nullableOwnedTypes}"
+                    $"People|Metric_Height_Value|decimal|18|3|False",
+                    $"People|Metric_Weight_Value|decimal|18|3|False"
                 );
             }
             finally { db.Database.EnsureDeleted(); }
@@ -78,10 +70,8 @@ namespace Toolbelt.ComponentModel.DataAnnotations.Test
         private static List<string> DumpColumnsTypes(MyDbContext db)
         {
             var dump = new List<string>();
-            var conn = db.Database.GetDbConnection() as SqlConnection;
-#nullable disable
+            var conn = db.Database.GetDbConnection() as SqlConnection ?? throw new Exception("The connection object is not SqlConnection");
             using var cmd = conn.CreateCommand();
-#nullable enable
             cmd.CommandText = @"
                         SELECT [Table] = t.name, [Column] = c.name, [Type] = type.name, [Precision] = c.precision, [Scale] = c.scale, [Nullable] = c.is_nullable
                         FROM sys.tables t
