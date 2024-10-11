@@ -1,9 +1,8 @@
-﻿namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models
-{
-    public class Metric
-    {
-        public Mesure Height { get; set; } = new Mesure();
+﻿namespace Toolbelt.ComponentModel.DataAnnotations.Test.Models;
 
-        public Mesure Weight { get; set; } = new Mesure();
-    }
+public class Metric
+{
+    public Mesure Height { get; set; } = new Mesure();
+
+    public Mesure Weight { get; set; } = new Mesure();
 }
