@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/README/">
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".github/workflows/unit-tests.yml" />
+  </Folder>
+  <Project Path="EFCore.DecimalAttribute.Attribute/EFCore.DecimalAttribute.Attribute.csproj" />
+  <Project Path="EFCore.DecimalAttribute.Test/EFCore.DecimalAttribute.Test.csproj" />
+  <Project Path="EFCore.DecimalAttribute/EFCore.DecimalAttribute.csproj" />
+</Solution>
