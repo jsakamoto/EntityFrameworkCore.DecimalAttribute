@@ -33,7 +33,7 @@ Keep the legacy attribute type and the V5 inheritance relationship intact. The `
 
 `global.json` switches `dotnet test` to the Microsoft.Testing.Platform runner (needs .NET 10 SDK or later), so use `--project` instead of a positional path and no VSTest options (`-l`, `--logger`).
 
-The test project (xUnit v3 on Microsoft.Testing.Platform, plain `Assert`; models in `EFCore.DecimalAttribute.Test/Models`) multi-targets net8.0/9.0/10.0, each pinned to the matching EF Core version via conditional `PackageReference` groups. When bumping EF Core, update all three groups.
+The test project (xUnit v3 on Microsoft.Testing.Platform, assertions via ChainingAssertion's `.Is(...)`; models in `EFCore.DecimalAttribute.Test/Models`) multi-targets net8.0/9.0/10.0, each pinned to the matching EF Core version via conditional `PackageReference` groups. When bumping EF Core, update all three groups.
 
 ## Releasing
 
