@@ -17,7 +17,7 @@ dotnet test                                                # all target framewor
 dotnet test -f net9.0 --filter-method "*<TestName>*"       # single test
 ```
 
-Tests run against a real SQL Server (not mocked). By default they connect to `(localdb)\mssqllocaldb` with integrated security and create a throwaway database per test. To use another server, set `MSSQL_SERVER`, `MSSQL_USER`, `MSSQL_PWD` (CI uses a `mcr.microsoft.com/mssql/server` Docker container on `localhost,1433`).
+Tests run against a real SQL Server (not mocked). The test code starts it in a Docker container with Testcontainers (`SqlServerFixture.cs`, image `mcr.microsoft.com/mssql/server:2025-latest`), so a running Docker engine is the only requirement, locally and in CI. SQL Server test classes join the `SqlServerCollection` xUnit collection to share one container per test run (one per target framework), and each test creates its own throwaway database with `SqlServerFixture.CreateDatabase()`. `IndexAttribute` uses the same setup, so keep the two in sync.
 
 Building either library project packs a `.nupkg` into `..\dist\` (`GeneratePackageOnBuild`).
 

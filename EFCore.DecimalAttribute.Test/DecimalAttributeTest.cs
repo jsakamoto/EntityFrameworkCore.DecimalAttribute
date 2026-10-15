@@ -7,25 +7,19 @@ using Xunit;
 
 namespace Toolbelt.ComponentModel.DataAnnotations.Test;
 
+[Collection(nameof(SqlServerCollection))]
 public class DecimalAttributeTest
 {
-    private static MyDbContext CreateMyDbContext()
+    private readonly SqlServerFixture _sqlServer;
+
+    public DecimalAttributeTest(SqlServerFixture sqlServer)
     {
-        var server = Environment.GetEnvironmentVariable("MSSQL_SERVER");
-        if (string.IsNullOrEmpty(server)) server = "(localdb)\\mssqllocaldb";
-        var user = Environment.GetEnvironmentVariable("MSSQL_USER");
-        var pwd = Environment.GetEnvironmentVariable("MSSQL_PWD");
-        var credential = (!string.IsNullOrEmpty(user) && !string.IsNullOrEmpty(pwd)) ? $"User={user};Password={pwd}" : "Integrated Security=True";
-        var connStrBase = $"Server={server};{credential};TrustServerCertificate=True;";
+        this._sqlServer = sqlServer;
+    }
 
-        var dbName = Guid.NewGuid().ToString("N");
-
-        using (var connToMaster = new SqlConnection(connStrBase + "Database=master;"))
-        using (var cmd = new SqlCommand($"CREATE DATABASE [{dbName}]", connToMaster))
-        {
-            connToMaster.Open();
-            cmd.ExecuteNonQuery();
-        }
+    private MyDbContext CreateMyDbContext()
+    {
+        var connStr = this._sqlServer.CreateDatabase();
 
         var loggerFactory = new LoggerFactory(
             new[] { new DebugLoggerProvider() },
@@ -34,7 +28,6 @@ public class DecimalAttributeTest
                 Rules = { new LoggerFilterRule("Debug", DbLoggerCategory.Database.Command.Name, LogLevel.Information, (n, c, l) => true) }
             });
 
-        var connStr = connStrBase + $"Database={dbName};";
         var option = new DbContextOptionsBuilder<MyDbContext>()
             .UseSqlServer(connStr)
             .UseLoggerFactory(loggerFactory)
@@ -47,7 +40,7 @@ public class DecimalAttributeTest
     public void CreateDb_with_DecimalAttribute_Test()
     {
         // Create database.
-        using var db = CreateMyDbContext();
+        using var db = this.CreateMyDbContext();
         db.Database.OpenConnection();
         db.Database.EnsureCreated();
 

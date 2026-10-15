@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="ChainingAssertion-xUnit.Bin" Version="3.0.0" />
+    <PackageReference Include="Testcontainers.MsSql" Version="4.16.0" />
     <PackageReference Include="xunit.v3" Version="4.0.2" />
   </ItemGroup>
 
