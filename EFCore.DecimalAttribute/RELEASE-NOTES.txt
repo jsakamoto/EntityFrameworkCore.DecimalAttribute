@@ -1,4 +1,7 @@
-﻿v.5.0.1.4
+﻿v.5.0.1.5
+- Update AnnotationBasedModelBuilder to v.5.0.1.5, so that [Decimal] on a property of a base class in an inheritance hierarchy is configured once on the base entity type
+
+v.5.0.1.4
 - Supports EntityFramework Core 11.0 RC 2
 - Update README.md
 
