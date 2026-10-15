@@ -17,7 +17,12 @@ dotnet test                                                # all target framewor
 dotnet test -f net9.0 --filter-method "*<TestName>*"       # single test
 ```
 
-Tests run against a real SQL Server (not mocked). The test code starts it in a Docker container with Testcontainers (`SqlServerFixture.cs`, image `mcr.microsoft.com/mssql/server:2025-latest`), so a running Docker engine is the only requirement, locally and in CI. SQL Server test classes join the `SqlServerCollection` xUnit collection to share one container per test run (one per target framework), and each test creates its own throwaway database with `SqlServerFixture.CreateDatabase()`. `IndexAttribute` uses the same setup, so keep the two in sync.
+Tests run against real SQL Server and PostgreSQL databases (not mocked). The test code starts each in a Docker container with Testcontainers, so a running Docker engine is the only requirement, locally and in CI.
+
+- SQL Server: `SqlServerFixture.cs` (image `mcr.microsoft.com/mssql/server:2025-latest`), used by `DecimalAttributeTest` through the `SqlServerCollection` xUnit collection.
+- PostgreSQL: `PostgreSqlFixture.cs` (image `postgres:18`), used by `DecimalAttributeTest_on_PostgreSQL` through the `PostgreSqlCollection` xUnit collection.
+
+Each collection shares one container per test run (one per target framework), and each test creates its own throwaway database with the fixture's `CreateDatabase()`. A container starts only when a test in its collection runs. `IndexAttribute` uses the same setup, so keep the two in sync.
 
 Building either library project packs a `.nupkg` into `..\dist\` (`GeneratePackageOnBuild`).
 
@@ -42,7 +47,8 @@ Follow these three rules.
 
 1. **The library lists each .NET version from `net10.0` on.** `EFCore.DecimalAttribute` targets `netstandard2.0` and `netstandard2.1`, plus `net10.0` and `net11.0` one by one. When a new .NET major version ships, add its TFM. These TFMs are there so that nuget.org shows them as supported. (`EFCore.DecimalAttribute.Attribute` has no EF dependency and stays `netstandard2.0` only.)
 2. **The library keeps the oldest EF Core reference on every TFM.** It has no direct EF Core reference. EF Core comes through the AnnotationBasedModelBuilder package, which depends on EF Core Relational 3.0.0 (3.1.0 for `netstandard2.0`). This keeps one package usable with EF Core 3.0 through the latest. Never add a newer EF Core reference, not even for `net10.0` or later. It would force users to upgrade EF Core, for example a .NET 10 app that still uses EF Core 8.
-3. **The test project uses the latest EF Core of the same major version as each TFM.** It targets `net8.0` to `net11.0`, and each TFM has a conditional `PackageReference` group (for example, `net10.0` uses the latest EF Core 10.0.x). The other Microsoft packages in the group (`System.Runtime.Caching`, `Microsoft.Extensions.Logging.Debug`) follow the same rule. While a .NET version is still in preview or RC, use its latest prerelease (now `11.0.0-rc.2.26504.105`). When you bump versions, update every group.
+3. **The test project uses the latest EF Core of the same major version as each TFM.** It targets `net8.0` to `net11.0`, and each TFM has a conditional `PackageReference` group (for example, `net10.0` uses the latest EF Core 10.0.x). The other Microsoft packages in the group (`System.Runtime.Caching`, `Microsoft.Extensions.Logging.Debug`) follow the same rule, and so does `Npgsql.EntityFrameworkCore.PostgreSQL` (the latest release of the same major version). While a .NET version is still in preview or RC, use its latest prerelease (now `11.0.0-rc.2.26504.105`). When you bump versions, update every group.
+   - Npgsql's EF Core 11 provider is only at `11.0.0-rc.1.1`, which pins EF Core to `11.0.0-rc.1` exactly. The `net11.0` group therefore references `Microsoft.EntityFrameworkCore` and `Microsoft.EntityFrameworkCore.Relational` RC2 directly, with `NoWarn="NU1608"`. When a Npgsql release that matches the EF Core version ships, update it and drop those two references.
 
 ## Releasing
 
